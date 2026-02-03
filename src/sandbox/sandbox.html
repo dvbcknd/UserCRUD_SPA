@@ -1,0 +1,84 @@
+
+
+<!-- TELA DE CADRASTRO -->
+    <form  class=" grid bg-amber-300 p-12 rounded-md "
+        id="form">
+
+        <label class="text-black p-2 " 
+          for="name">Nome:</label>
+        <input class="border border-white bg-amber-50 text-black p-2 rounded-md " 
+          type="text" name="nome" id="name" required>
+
+        <label class="text-black p-2" 
+          for="sobrenome">Sobrenome:</label>
+        <input class="border border-white bg-amber-50 text-black p-2 rounded-md " 
+          name="sobrenome" id="sobrenome" required>
+
+        <label class="text-black p-2" 
+          for="email">E-mail:</label>
+        <input class="border border-white bg-amber-50 text-black p-2 rounded-md " 
+          type="email" name="email" id="email" required>
+
+        <button class="border-black bg-amber-50 mt-9 rounded-md p-2
+          type="submit">Cadastrar</button>
+
+    </form>
+    <!-- FIM TELA DE CADRASTRO -->
+
+
+
+
+
+    <!-- Pesquisa de usuário -->
+      <nav class="flex justify-center items-center ">
+        <!-- Pesquisa do usuário -->
+        <form class=" container-search bg-white p-6 m-6 rounded-2xl">
+          <h1 class="font-bold text-2xl justify-self-center">Pesquisa de usuário</h1>
+          <input type="text" name="name" id="" placeholder="Nome" from="add-user"
+              class=" name-input bg-amber-200 p-2.5 m-2.5 rounded-xl">
+          <input type="text" name="name" id="" placeholder="Sobrenome" from="add-user"
+          class=" lastname-input bg-amber-200 p-2.5 m-2.5 rounded-xl">
+          <button type=""
+          class=" search-user p-3 m-2.5 bg-cyan-400 rounded-2xl hover:bg-cyan-500 hover:cursor-pointer
+                  font-bold text-white">Pesquisar Usuário</button>
+       </form>
+
+       <section class=" container-add bg-white p-6 m-6 rounded-2xl flex flex-col justify-center items-center ">
+        <h1 class="font-bold text-2xl justify-self-center" >Cadastrar usuário</h1>
+        <button class=" add-user  p-3 m-2 bg-cyan-800 rounded-2xl hover:bg-cyan-500 hover:cursor-pointer
+                  font-bold text-white ">Cadastre aqui</button>
+       </section>
+      </nav>
+
+    <!-- Seção dos usuários -->
+    <section class="app rounded-2xl bg-amber-100 flex flex-wrap justify-center content-center gap-5 p-10 m-10">
+      <div class="user border-4 bg-white p-2.5 rounded-2xl ">
+        <p class=" id p-3.5 m-1.5 bg-amber-200 rounded-2xl "
+          ><span class=" font-bold">ID:</span> 1</p>
+
+        <p class=" name p-3.5 m-1.5 bg-amber-200 rounded-2xl "
+          ><span class=" font-bold">Nome:</span> Ariel</p>
+
+        <p class=" lastname p-3.5 m-1.5 bg-amber-200 rounded-2xl "
+          ><span class=" font-bold">Sobrenome:</span> Fernandes</p>
+
+        <p class="email p-3.5 m-1.5 bg-amber-200 rounded-2xl "
+          ><span class=" font-bold">E-mail:</span> arielfernandes@gmail.com</p>
+
+        <span class=" container-button flex justify-center">
+          <button type="submit"
+          class=" edit-button p-3 m-2.5 bg-green-400 rounded-2xl hover:bg-green-500 hover:cursor-pointer
+                  font-bold text-white">Editar</button>
+
+          <button type="submit"
+          class=" delete-button  p-3 m-2.5 bg-red-400 rounded-2xl hover:bg-red-500 hover:cursor-pointer
+                  font-bold text-white">Excluir</button>
+        </span>
+      </div>
+    </section>
+
+////////////////////////////////
+
+
+
+    
