@@ -1,1 +1,5 @@
+//Inicia o servidor Json
 npx json-server --watch ./server/db.json --port 3000
+
+//Inicia o Tailwindo via CLI (como está sendo utilizado nesse projeto)
+npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch

@@ -17,14 +17,20 @@ export async function getUsers(){
 
 //A função cria os elementos HTML e injeta eles na main já com os dados da API
 function render(data){
-    data.forEach(({id, name, lastname, email}) =>{
-        // console.log(id, name, lastname, email);
-        //Seleciona a Div na tela principal
-        const section = document.querySelector('.app');
+    console.log(data);
 
+    const root = document.querySelector('.root');
+    const main = document.createElement('main');
+    main.classList.add('main-container', 'flex', 'flex-wrap', 'gap-3', 'bg-white', 
+                        'm-2', 'p-5', 'w-8xl', 'overflow-auto', 'rounded-2xl',
+                        'justify-center');
+
+    data.forEach(({id, name, lastname, email}) =>{
+        console.log(id, name, lastname, email);
+    
         //Cria elementos via js
         const div = document.createElement('div');
-        div.classList.add('user','bg-white', 'p-2.5', 'rounded-2xl', 'p-2');
+        div.classList.add('user','bg-amber-400', 'p-2.5', 'rounded-2xl', 'p-2');
 
         const span1 = document.createElement('span');
         span1.classList.add('font-bold');
@@ -79,6 +85,9 @@ function render(data){
         p3.append(span3, lastname);
         p4.append(span4, email);
         div.append(p1, p2, p3, p4, span5);
-        section.append(div);
+        main.append(div);
     });
+
+    root.append(main);
+    
 }
