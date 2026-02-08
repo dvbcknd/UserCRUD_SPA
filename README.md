@@ -2,7 +2,7 @@
 
 ## Descrição:
 Aplicação front-end desenvolvida com **JavaScript puro (Vanilla JS)**, utilizando **Vite** como bundler e Tailwind CSS para estilização.
-O projeto consome uma **API REST simulada com json-server**, permitindo o gerenciamento básico de usuários, **utilizando os métodos HTTP (POST, PATCH, DELETE)**.
+O projeto consome uma **API REST simulada com json-server**, permitindo o gerenciamento básico de usuários, **utilizando os métodos HTTP (GET, POST, PATCH, DELETE)**.
 
 ## O objetivo do projeto é praticar:
 
