@@ -17,12 +17,12 @@ O projeto consome uma **API REST simulada com json-server**, permitindo o gerenc
 
 - Listagem de usuários consumindo API REST
 - Cadastro de novos usuários
+- Edição de usuários
 - Exclusão de usuários
 - Interface dinâmica (SPA, sem recarregar a página)
 
 ## Em desenvolvimento:
 
-- Edição de usuários
 - Busca/filtro de usuários
 
 ## Tecnologias utilizadas:

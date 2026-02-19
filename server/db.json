@@ -2,8 +2,8 @@
   "users": [
     {
       "id": "6bdd",
-      "name": "Arielle",
-      "lastname": "Silva",
+      "name": "Arielly Cayla",
+      "lastname": "Silva Aguiar",
       "email": "silva@gmail.com"
     },
     {
@@ -41,6 +41,24 @@
       "name": "Alexsandro",
       "lastname": "Marinho Da Silva",
       "email": "marinho@globo.com"
+    },
+    {
+      "id": "3113",
+      "name": "Eduardo",
+      "lastname": "Vieira Melo",
+      "email": "melo_vieira@outlook.com"
+    },
+    {
+      "id": "341f",
+      "name": "Yvar",
+      "lastname": "Marinho",
+      "email": "yvar@globo.com"
+    },
+    {
+      "id": "9dc7",
+      "name": "Ariel",
+      "lastname": "Maia",
+      "email": "maia_ariel@gmail.com.br"
     }
   ]
 }
