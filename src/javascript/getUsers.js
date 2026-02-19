@@ -1,7 +1,8 @@
 
 import axios from 'axios';
 
-const url = 'http://localhost:3000/users';
+export const url = 'http://localhost:3000/users';
+
 
 //Pega os dados da API
 export async function getUsers(){
@@ -17,17 +18,13 @@ export async function getUsers(){
 
 //A função cria os elementos HTML e injeta eles na main já com os dados da API
 function render(data){
-    console.log(data);
-
     const root = document.querySelector('.root');
     const main = document.createElement('main');
     main.classList.add('main-container', 'flex', 'flex-wrap', 'gap-3', 'bg-white', 
-                        'm-2', 'p-5', 'w-8xl', 'overflow-auto', 'rounded-2xl',
+                        'mt-25', 'p-5', 'w-8xl', 'overflow-auto', 'rounded-2xl',
                         'justify-center');
 
-    data.forEach(({id, name, lastname, email}) =>{
-        console.log(id, name, lastname, email);
-    
+    data.forEach(({id, name, lastname, email}) =>{  
         //Cria elementos via js
         const div = document.createElement('div');
         div.classList.add('user','bg-amber-400', 'p-2.5', 'rounded-2xl', 'p-2');
@@ -49,36 +46,33 @@ function render(data){
         span4.textContent = 'Email: ';
 
         const p1 = document.createElement('p');
-        p1.classList.add('id', 'p-3.5', 'm-1.5', 'bg-amber-200', 'rounded-2xl');
-                
+        p1.classList.add('id', 'p-3.5', 'm-1.5', 'bg-amber-200', 'rounded-2xl');   
 
         const p2 = document.createElement('p');
         p2.classList.add('name', 'p-3.5', 'm-1.5', 'bg-amber-200', 'rounded-2xl',);
         
-
         const p3 = document.createElement('p');
         p3.classList.add('lastname', 'p-3.5', 'm-1.5', 'bg-amber-200', 'rounded-2xl');
         
-
         const p4 = document.createElement('p');
         p4.classList.add('email', 'p-3.5', 'm-1.5', 'bg-amber-200', 'rounded-2xl');
         
-
         const span5 = document.createElement('span');
-        span5.classList.add('container-button', 'flex', 'justify-center');
+        span5.classList.add('container-button', 'flex', 'justify-center', 'rounded-2xl', 'bg-white', 'm-2');
 
         const editButton = document.createElement('button');
-        editButton.classList.add('edit-button','p-3', 'm-2.5', 'bg-green-400', 'rounded-2xl',
-                                    'font-bold', 'text-white','hover:bg-green-500', 'hover:cursor-pointer');
+        editButton.classList.add('edit-button','p-3', 'm-2.5', 'bg-green-500', 'rounded-2xl',
+                                    'font-bold', 'text-white','hover:bg-green-700', 'hover:cursor-pointer');
         editButton.textContent = 'Editar';
+        editButton.dataset.id = id;
 
         const deleteButton = document.createElement('button');
-        deleteButton.classList.add('delete-button','p-3', 'm-2.5', 'bg-red-400', 'rounded-2xl',
-                                    'font-bold', 'text-white', 'hover:bg-red-500', 'hover:cursor-pointer' );
+        deleteButton.classList.add('delete-button','p-3', 'm-2.5', 'bg-red-500', 'rounded-2xl',
+                                    'font-bold', 'text-white', 'hover:bg-red-700', 'hover:cursor-pointer' );
         deleteButton.textContent = 'Excluir';
         deleteButton.dataset.id = id;
 
-        //inserir itens
+        //Agrupar itens itens
         span5.append(editButton, deleteButton);
         p1.append(span1, id);
         p2.append(span2, name);
@@ -88,6 +82,7 @@ function render(data){
         main.append(div);
     });
 
+    // Insere tudo na tela de início
     root.append(main);
     
 }

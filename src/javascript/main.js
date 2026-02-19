@@ -1,11 +1,12 @@
 import '../css/output.css';
 import './getUsers';
 import './telaCadastro';
-import './postUser';
+import './patchUsers';
 
 import axios from 'axios';
 import { telaCadastro } from './telaCadastro';
 import { getUsers } from './getUsers';
+
 
 // Insere a tela inicial do programa, aonde tem a lista dos usuários da API
 export function init(){
@@ -18,7 +19,7 @@ export function init(){
     console.log("root encontrado! Injetando HTML...");
     root.innerHTML = `
         <!-- Menu pesquisa do usuário -->
-        <nav class=" w-screen bg-amber-400  p-4 flex items-center justify-between">
+        <nav class=" w-screen bg-amber-400 min-w-4xl flex items-center justify-between fixed top-0">
 
             <ul class=" w-1xl flex flex-wrap justify-center items-center bg-white m-2.5 p-1 rounded-2xl">
 
@@ -44,20 +45,25 @@ export function init(){
 
         </nav>
     `;
-    
-    // Evento de chamar a tela de cadastro de usuário!
+
+    //Evento de chamar a tela de cadastro de usuário!
     const addButton = document.querySelector('#add-user');
     addButton.addEventListener('click', (e) =>{
         e.preventDefault();
         console.log('Clicou no adicionar usuário!');
         telaCadastro(); //Chama a função que imprime a tela de cadastro;
     });
-
+    
     //Chama a função que pega os usuários da API
     getUsers();
+}
+
+init();
+
 
     // Evento para excluir o usuário do banco de dados
-    document.addEventListener('click', async (e) =>{
+    const root = document.querySelector('.root');
+    root.addEventListener('click', async (e) =>{
         if( e.target.classList.contains('delete-button')){
             console.log('O botão excluir foi clicado!');
 
@@ -65,12 +71,8 @@ export function init(){
             console.log("Deletando o ID:", idDelete);
 
             await axios.delete(`http://localhost:3000/users/${idDelete}`);
-
-            //Pega o elemento clicado e procuta o pai e remove o card indicado em closest() da tela do front
-            e.target.closest('.user').remove();
+            // re-renderiza após a exclusão
+            init();
         }
     });
-}
-
-init();
 

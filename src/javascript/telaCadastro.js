@@ -6,7 +6,7 @@ export function telaCadastro() {
   const root = document.querySelector('.root');
   
   root.innerHTML = `
-    <section class=" min-h-screen flex flex-col items-center justify-center ">
+    <section class=" min-h-screen flex flex-col items-center justify-center">
       <div 
       class="bg-amber-200 p-12 rounded-2xl flex flex-col justify-center">
         <form id="form" class=" flex flex-col justify-center bg-white rounded-2xl p-6">
